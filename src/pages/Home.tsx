@@ -155,7 +155,7 @@ export default function Home() {
               {/* First Image */}
               <div className="mb-6 md:mb-0">
                 <img
-                  src="30b97f68d63827962e5a6e13b94416a1.jpg"
+                  src="https://gcdnb.pbrd.co/images/IH2s2irDCc7A.jpg?o=1"
                   alt="Team at work"
                   className="rounded-2xl shadow-2xl w-full h-auto"
                 />
