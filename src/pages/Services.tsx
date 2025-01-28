@@ -151,8 +151,8 @@ export default function Services() {
             Contact us today for a free consultation and let us help you find the perfect solution for your needs.
           </p>
           <Link
-            to="/contact">
-          <button className="bg-accent-orange hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg transition-all transform hover:scale-105">
+            to="/contact" 
+            className="bg-accent-orange hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg transition-all transform hover:scale-105">
             Contact Us Now
           <Link>
           </button>
