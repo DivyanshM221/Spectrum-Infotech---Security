@@ -104,6 +104,51 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-24 bg-white">
+  <div className="container mx-auto px-4">
+    <div className="max-w-6xl mx-auto">
+      <h2 className="font-heading text-4xl font-bold mb-6 text-gray-800 text-center">
+        Our Story
+      </h2>
+      <p className="text-xl text-gray-600 mb-8 text-center">
+        Founded by Mr. Shailesh Mehta, Spectrum Infotech & Securities has been at the forefront of technology solutions for over a decade. Starting with a vision to provide high-quality IT support, the company quickly expanded to offer a wide range of services, including security systems, electronics sales, and comprehensive repair services. Our commitment to quality and customer satisfaction has made us a trusted name in the industry.
+      </p>
+      <p className="text-xl text-gray-600 mb-8 text-center">
+        Over the years, we've built strong relationships with our clients, understanding their unique needs and delivering tailored solutions. With a focus on innovation, trust, and reliability, we have grown into a leader in our field. Our team of experts is dedicated to staying ahead of the curve with the latest technology, ensuring that our clients receive the best possible service and solutions.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-center">
+        <div>
+          <div className="text-primary-600 mb-4">
+            <ThumbsUp className="w-10 h-10 mx-auto" />
+          </div>
+          <h4 className="font-semibold text-lg">Trust</h4>
+          <p className="text-gray-600">
+            We have earned the trust of countless clients by consistently delivering dependable services.
+          </p>
+        </div>
+        <div>
+          <div className="text-primary-600 mb-4">
+            <Tool className="w-10 h-10 mx-auto" />
+          </div>
+          <h4 className="font-semibold text-lg">Innovation</h4>
+          <p className="text-gray-600">
+            Our solutions are built on cutting-edge technology, designed to drive efficiency and growth.
+          </p>
+        </div>
+        <div>
+          <div className="text-primary-600 mb-4">
+            <ShieldCheck className="w-10 h-10 mx-auto" />
+          </div>
+          <h4 className="font-semibold text-lg">Reliability</h4>
+          <p className="text-gray-600">
+            Clients rely on us for our unwavering commitment to quality, security, and customer satisfaction.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
       {/* Testimonials Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
