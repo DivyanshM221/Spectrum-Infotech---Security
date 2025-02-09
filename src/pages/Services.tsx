@@ -47,7 +47,7 @@ export default function Services() {
       icon: <Shield className="w-12 h-12" />, 
       title: "Security Solutions", 
       description: "Comprehensive security camera systems for homes and businesses.",
-      features: ["CCTV installation", "24/7 monitoring systems", "Remote access setup", "Security system maintenance", "Custom security solutions"]
+      features: ["CCTV installation", "24/7 monitoring systems", "Remote access setup", "Video Door Phones (VDP)", "Fire Alarm Systems"]
     },
     {
       icon: <Monitor className="w-12 h-12" />, 
