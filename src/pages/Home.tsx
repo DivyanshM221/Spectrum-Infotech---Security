@@ -1,223 +1,284 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { 
-  PenTool as Tool, 
-  Shield, 
-  Monitor, 
-  Laptop, 
-  Tablet, 
-  Camera, 
-  Wrench, 
-  Clock, 
-  CheckCircle, 
-  Server, 
-  Network, 
-  Mail, 
-  Code, 
-  ShieldCheck 
-} from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Monitor,
+  Shield,
+  PenTool as Tool,
+  ShieldCheck,
+  ThumbsUp,
+  Star,
+} from "lucide-react";
 
-function ServiceHero() {
+function HeroSection() {
   return (
-    <div className="bg-primary-900 text-white py-16">
-      <div className="container mx-auto px-4">
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-center mb-6">Our Services</h1>
-        <p className="text-xl text-center text-primary-100 max-w-3xl mx-auto">
-          Professional tech repair, security solutions, and device sales backed by years of expertise
-        </p>
+    <div className="relative min-h-[90vh] bg-primary-900 text-white overflow-hidden flex items-center justify-center">
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-900 to-primary-800 opacity-90"></div>
+        <img
+          src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=2000&q=80"
+          alt="Tech background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="relative container mx-auto px-4 py-24 text-center">
+        <div className="max-w-4xl mx-auto animate-fade-in">
+          <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Empowering Technology,
+            <span className="block gradient-text">Enhancing Security</span>
+          </h1>
+          <p
+            className="text-xl md:text-2xl text-primary-100 mb-12 animate-slide-in"
+            style={{ animationDelay: "0.2s" }}
+          >
+            Your trusted partner in technology solutions and security systems
+          </p>
+          <div
+            className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <Link
+              to="/services"
+              className="btn-gradient text-white font-semibold px-8 py-4 rounded-lg text-lg"
+            >
+              Explore Services
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-function ServiceCard({ 
-  icon, 
-  title, 
-  description, 
-  features 
-}: { 
-  icon: React.ReactNode; 
-  title: string; 
-  description: string; 
-  features: string[];
+function ServiceCard({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
 }) {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-      <div className="p-6">
-        <div className="text-primary-600 mb-4">{icon}</div>
-        <h3 className="font-heading text-2xl font-semibold mb-4">{title}</h3>
-        <p className="text-gray-600 mb-6">{description}</p>
-        <ul className="space-y-3">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-start gap-2">
-              <CheckCircle className="w-5 h-5 text-accent-green mt-1 flex-shrink-0" />
-              <span className="text-gray-700">{feature}</span>
-            </li>
-          ))}
-        </ul>
+    <Link
+      to="/services"
+      className="service-card transform bg-white rounded-xl shadow-lg p-8 hover:scale-105 transition-all group flex flex-col items-center justify-center"
+    >
+      <div className="text-primary-600 mb-6">{icon}</div>
+      <h3 className="font-heading text-2xl font-semibold mb-4 text-gray-800 text-center">
+        {title}
+      </h3>
+      <p className="text-gray-600 mb-6 text-center">{description}</p>
+      <div className="text-primary-600 font-semibold inline-flex items-center gap-2 group-hover:text-primary-800">
+        Learn More{" "}
+        <span className="transition-transform group-hover:translate-x-1">
+          →
+        </span>
       </div>
-    </div>
+    </Link>
   );
 }
 
-function ProcessStep({ number, title, description }: { number: number; title: string; description: string }) {
+function TestimonialCard({
+  name,
+  role,
+  content,
+  rating,
+}: {
+  name: string;
+  role: string;
+  content: string;
+  rating: number;
+}) {
   return (
-    <div className="flex gap-4">
-      <div className="flex-shrink-0 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
-        {number}
+    <div className="bg-white rounded-xl shadow-lg p-8 transition-all hover:shadow-xl text-center">
+      <div className="flex justify-center gap-1 text-yellow-400 mb-6">
+        {Array.from({ length: rating }).map((_, i) => (
+          <Star key={i} className="w-6 h-6 fill-current" />
+        ))}
       </div>
+      <p className="text-gray-600 mb-6 text-lg">{content}</p>
       <div>
-        <h4 className="font-heading text-xl font-semibold mb-2">{title}</h4>
-        <p className="text-gray-600">{description}</p>
+        <p className="font-semibold text-lg">{name}</p>
+        <p className="text-gray-500">{role}</p>
       </div>
     </div>
   );
 }
 
-export default function Services() {
-  const services = [
-    {
-      icon: <Tool className="w-12 h-12" />,
-      title: "Device Repairs",
-      description: "Expert repair services for all your electronic devices with quick turnaround times.",
-      features: [
-        "Computer & laptop repairs",
-        "Tablet & iPad servicing",
-        "Hardware upgrades",
-        "Software troubleshooting",
-        "Data recovery services"
-      ]
-    },
-    {
-      icon: <Shield className="w-12 h-12" />,
-      title: "Security Solutions",
-      description: "Comprehensive security camera systems for homes and businesses.",
-      features: [
-        "CCTV installation",
-        "24/7 monitoring systems",
-        "Remote access setup",
-        "Security system maintenance",
-        "Custom security solutions"
-      ]
-    },
-    {
-      icon: <Monitor className="w-12 h-12" />,
-      title: "Electronics Sales",
-      description: "Quality new and refurbished devices at competitive prices.",
-      features: [
-        "New & refurbished laptops",
-        "Desktop computers",
-        "Tablets & iPads",
-        "Security cameras",
-        "Warranty on all products"
-      ]
-    },
-    {
-      icon: <Server className="w-12 h-12" />,
-      title: "Server Installation",
-      description: "Professional server setup and configuration for businesses of all sizes.",
-      features: [
-        "Server hardware installation",
-        "Network server setup",
-        "Cloud server configuration",
-        "Server maintenance & support",
-        "Data backup solutions"
-      ]
-    },
-    {
-      icon: <Network className="w-12 h-12" />,
-      title: "Networking & Mailing Solutions",
-      description: "Reliable networking and email solutions tailored to your business needs.",
-      features: [
-        "Network setup & configuration",
-        "Email server installation",
-        "VPN setup",
-        "Network security",
-        "Ongoing support & maintenance"
-      ]
-    },
-    {
-      icon: <Code className="w-12 h-12" />,
-      title: "Software - Microsoft & Tally",
-      description: "Installation, customization, and support for Microsoft and Tally software.",
-      features: [
-        "Microsoft Office setup",
-        "Tally ERP installation",
-        "Software customization",
-        "Data migration",
-        "Training & support"
-      ]
-    },
-    {
-      icon: <ShieldCheck className="w-12 h-12" />,
-      title: "Anti-Virus & Security Solutions",
-      description: "Comprehensive anti-virus and security software to protect your systems.",
-      features: [
-        "Anti-virus installation",
-        "Malware removal",
-        "Firewall setup",
-        "Security audits",
-        "Ongoing protection"
-      ]
-    }
-  ];
-
+export default function Home() {
   return (
     <div>
-      <ServiceHero />
-      
-      {/* Main Services */}
-      <section className="py-16">
+      <HeroSection />
+
+      {/* Services Section */}
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="font-heading text-4xl font-bold mb-6 text-gray-800">
+              Our Services
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive technology solutions tailored to your needs
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
+            <div>
+              <ServiceCard
+                icon={<Tool className="w-12 h-12 mx-auto" />}
+                title="Device Repairs"
+                description="Expert repair services for computers, laptops, tablets, and more"
+              />
+            </div>
+            <div>
+              <ServiceCard
+                icon={<Shield className="w-12 h-12 mx-auto" />}
+                title="Security Solutions"
+                description="Professional security camera installation and maintenance"
+              />
+            </div>
+            <div>
+              <ServiceCard
+                icon={<Monitor className="w-12 h-12 mx-auto" />}
+                title="Electronics Sales"
+                description="Quality new and refurbished devices at competitive prices"
+              />
+              <ServiceCard
+              icon={<Server className="w-12 h-12 mx-auto" />}
+              title="Server Installation"
+              description="Professional setup and management of server infrastructures"
+            />
+            <ServiceCard
+              icon={<Network className="w-12 h-12 mx-auto" />}
+              title="Networking & Mailing Solutions"
+              description="Efficient network setup and secure mailing solutions for businesses"
+            />
+            <ServiceCard
+              icon={<FileText className="w-12 h-12 mx-auto" />}
+              title="Software - Microsoft & Tally"
+              description="Licensing and installation of Microsoft and Tally software"
+            />
+            <ServiceCard
+              icon={<ShieldAlert className="w-12 h-12 mx-auto" />}
+              title="Antivirus & Security Solutions"
+              description="Advanced security software to protect your data and devices"
+            />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-16 bg-gray-50">
+      {/* About Section */}
+      <section className="py-24">
         <div className="container mx-auto px-4">
-          <h2 className="font-heading text-3xl font-bold text-center mb-12">Our Process</h2>
-          <div className="max-w-3xl mx-auto space-y-8">
-            <ProcessStep
-              number={1}
-              title="Initial Assessment"
-              description="We diagnose your device or evaluate your security needs through a thorough consultation."
-            />
-            <ProcessStep
-              number={2}
-              title="Custom Solution"
-              description="Our experts develop a tailored solution based on your specific requirements and budget."
-            />
-            <ProcessStep
-              number={3}
-              title="Implementation"
-              description="We carry out the repairs or installation with precision and attention to detail."
-            />
-            <ProcessStep
-              number={4}
-              title="Quality Check"
-              description="Every service undergoes rigorous testing to ensure everything works perfectly."
-            />
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* First Image */}
+              <div className="mb-6 md:mb-0">
+                <img
+                  src="https://gcdnb.pbrd.co/images/IH2s2irDCc7A.jpg?o=1"
+                  alt="Team at work"
+                  className="rounded-2xl shadow-2xl w-full h-auto"
+                />
+              </div>
+
+              {/* Second Image */}
+              <div>
+                <img
+                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=2000&q=80"
+                  alt="Our work"
+                  className="rounded-2xl shadow-2xl w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Text Content */}
+            <div className="mt-12">
+              <h2 className="font-heading text-4xl font-bold mb-6 text-gray-800">
+                Our Story
+              </h2>
+              <p className="text-xl text-gray-600 mb-8">
+                Founded by Mr. Shailesh Mehta, Spectrum Infotech & Securities
+                has been at the forefront of technology solutions for over a
+                decade. Starting with a vision to provide high-quality IT
+                support, the company quickly expanded to offer a wide range of
+                services, including security systems, electronics sales, and
+                comprehensive repair services. Our commitment to quality and
+                customer satisfaction has made us a trusted name in the
+                industry.
+              </p>
+              <p className="text-xl text-gray-600 mb-8">
+                Over the years, we've built strong relationships with our
+                clients, understanding their unique needs and delivering
+                tailored solutions. With a focus on innovation, trust, and
+                reliability, we have grown into a leader in our field. Our team
+                of experts is dedicated to staying ahead of the curve with the
+                latest technology, ensuring that our clients receive the best
+                possible service and solutions.
+              </p>
+
+              <div className="grid grid-cols-3 gap-6 mt-12">
+                <div className="text-center">
+                  <div className="text-primary-600 mb-4">
+                    <ThumbsUp className="w-10 h-10 mx-auto" />
+                  </div>
+                  <h4 className="font-semibold text-lg">Trust</h4>
+                  <p className="text-gray-600">
+                    We have earned the trust of countless clients by
+                    consistently delivering dependable services.
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="text-primary-600 mb-4">
+                    <Tool className="w-10 h-10 mx-auto" />
+                  </div>
+                  <h4 className="font-semibold text-lg">Innovation</h4>
+                  <p className="text-gray-600">
+                    Our solutions are built on cutting-edge technology, designed
+                    to drive efficiency and growth.
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="text-primary-600 mb-4">
+                    <ShieldCheck className="w-10 h-10 mx-auto" />
+                  </div>
+                  <h4 className="font-semibold text-lg">Reliability</h4>
+                  <p className="text-gray-600">
+                    Clients rely on us for our unwavering commitment to quality,
+                    security, and customer satisfaction.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-primary-900 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-3xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Contact us today for a free consultation and let us help you find the perfect solution for your needs.
-          </p>
-          <Link
-            to="/contact" 
-            className="bg-accent-orange hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg transition-all transform hover:scale-105">
-            Contact Us Now
-          </Link>
+      {/* Testimonials Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="font-heading text-4xl font-bold text-center mb-16 text-gray-800">
+            What Our Clients Say
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <TestimonialCard
+              name="Sanjay"
+              role="Client"
+              content="Excellent service! They helped set up our entire socities security system and provide great ongoing support."
+              rating={5}
+            />
+            <TestimonialCard
+              name="Amit"
+              role="Business Owner"
+              content="Helped me set up 50 pcs in our office setup! Great Service was provided."
+              rating={5}
+            />
+            <TestimonialCard
+              name="Chetan"
+              role="Business"
+              content="Spectrum Infotech has been a great partner in our tech needs, always reliable and affordable."
+              rating={4}
+            />
+          </div>
         </div>
       </section>
     </div>
