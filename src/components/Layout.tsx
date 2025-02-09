@@ -116,7 +116,7 @@ function Footer() {
                 <Facebook className="w-6 h-6" />
               </a>
               <a
-                href="https://www.instagram.com/spectrum_comp/"
+                href="https://www.instagram.com/spectruminfotech/"
                 className="text-primary-200 hover:text-white transition-all"
               >
                 <Instagram className="w-6 h-6" />
