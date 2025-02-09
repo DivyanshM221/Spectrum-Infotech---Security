@@ -7,6 +7,10 @@ import {
   ShieldCheck,
   ThumbsUp,
   Star,
+  Server,
+  Network,
+  FileText,
+  ShieldAlert,
 } from "lucide-react";
 
 function HeroSection() {
@@ -53,10 +57,6 @@ function ServiceCard({
   icon,
   title,
   description,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
 }) {
   return (
     <Link
@@ -78,33 +78,6 @@ function ServiceCard({
   );
 }
 
-function TestimonialCard({
-  name,
-  role,
-  content,
-  rating,
-}: {
-  name: string;
-  role: string;
-  content: string;
-  rating: number;
-}) {
-  return (
-    <div className="bg-white rounded-xl shadow-lg p-8 transition-all hover:shadow-xl text-center">
-      <div className="flex justify-center gap-1 text-yellow-400 mb-6">
-        {Array.from({ length: rating }).map((_, i) => (
-          <Star key={i} className="w-6 h-6 fill-current" />
-        ))}
-      </div>
-      <p className="text-gray-600 mb-6 text-lg">{content}</p>
-      <div>
-        <p className="font-semibold text-lg">{name}</p>
-        <p className="text-gray-500">{role}</p>
-      </div>
-    </div>
-  );
-}
-
 export default function Home() {
   return (
     <div>
@@ -122,142 +95,75 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <ServiceCard
-                icon={<Tool className="w-12 h-12 mx-auto" />}
-                title="Device Repairs"
-                description="Expert repair services for computers, laptops, tablets, and more"
-              />
-            </div>
-            <div>
-              <ServiceCard
-                icon={<Shield className="w-12 h-12 mx-auto" />}
-                title="Security Solutions"
-                description="Professional security camera installation and maintenance"
-              />
-            </div>
-            <div>
-              <ServiceCard
-                icon={<Monitor className="w-12 h-12 mx-auto" />}
-                title="Electronics Sales"
-                description="Quality new and refurbished devices at competitive prices"
-              />
-            </div>
+            <ServiceCard
+              icon={<Tool className="w-12 h-12 mx-auto" />}
+              title="Device Repairs"
+              description="Expert repair services for computers, laptops, tablets, and more"
+            />
+            <ServiceCard
+              icon={<Shield className="w-12 h-12 mx-auto" />}
+              title="Security Solutions"
+              description="Professional security camera installation and maintenance"
+            />
+            <ServiceCard
+              icon={<Monitor className="w-12 h-12 mx-auto" />}
+              title="Electronics Sales"
+              description="Quality new and refurbished devices at competitive prices"
+            />
+            <ServiceCard
+              icon={<Server className="w-12 h-12 mx-auto" />}
+              title="Server Installation"
+              description="Professional setup and management of server infrastructures"
+            />
+            <ServiceCard
+              icon={<Network className="w-12 h-12 mx-auto" />}
+              title="Networking & Mailing Solutions"
+              description="Efficient network setup and secure mailing solutions for businesses"
+            />
+            <ServiceCard
+              icon={<FileText className="w-12 h-12 mx-auto" />}
+              title="Software - Microsoft & Tally"
+              description="Licensing and installation of Microsoft and Tally software"
+            />
+            <ServiceCard
+              icon={<ShieldAlert className="w-12 h-12 mx-auto" />}
+              title="Antivirus & Security Solutions"
+              description="Advanced security software to protect your data and devices"
+            />
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* First Image */}
-              <div className="mb-6 md:mb-0">
-                <img
-                  src="https://gcdnb.pbrd.co/images/IH2s2irDCc7A.jpg?o=1"
-                  alt="Team at work"
-                  className="rounded-2xl shadow-2xl w-full h-auto"
-                />
-              </div>
-
-              {/* Second Image */}
-              <div>
-                <img
-                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=2000&q=80"
-                  alt="Our work"
-                  className="rounded-2xl shadow-2xl w-full h-auto"
-                />
-              </div>
-            </div>
-
-            {/* Text Content */}
-            <div className="mt-12">
-              <h2 className="font-heading text-4xl font-bold mb-6 text-gray-800">
-                Our Story
-              </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                Founded by Mr. Shailesh Mehta, Spectrum Infotech & Securities
-                has been at the forefront of technology solutions for over a
-                decade. Starting with a vision to provide high-quality IT
-                support, the company quickly expanded to offer a wide range of
-                services, including security systems, electronics sales, and
-                comprehensive repair services. Our commitment to quality and
-                customer satisfaction has made us a trusted name in the
-                industry.
-              </p>
-              <p className="text-xl text-gray-600 mb-8">
-                Over the years, we've built strong relationships with our
-                clients, understanding their unique needs and delivering
-                tailored solutions. With a focus on innovation, trust, and
-                reliability, we have grown into a leader in our field. Our team
-                of experts is dedicated to staying ahead of the curve with the
-                latest technology, ensuring that our clients receive the best
-                possible service and solutions.
-              </p>
-
-              <div className="grid grid-cols-3 gap-6 mt-12">
-                <div className="text-center">
-                  <div className="text-primary-600 mb-4">
-                    <ThumbsUp className="w-10 h-10 mx-auto" />
-                  </div>
-                  <h4 className="font-semibold text-lg">Trust</h4>
-                  <p className="text-gray-600">
-                    We have earned the trust of countless clients by
-                    consistently delivering dependable services.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-primary-600 mb-4">
-                    <Tool className="w-10 h-10 mx-auto" />
-                  </div>
-                  <h4 className="font-semibold text-lg">Innovation</h4>
-                  <p className="text-gray-600">
-                    Our solutions are built on cutting-edge technology, designed
-                    to drive efficiency and growth.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-primary-600 mb-4">
-                    <ShieldCheck className="w-10 h-10 mx-auto" />
-                  </div>
-                  <h4 className="font-semibold text-lg">Reliability</h4>
-                  <p className="text-gray-600">
-                    Clients rely on us for our unwavering commitment to quality,
-                    security, and customer satisfaction.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="font-heading text-4xl font-bold text-center mb-16 text-gray-800">
-            What Our Clients Say
+      {/* Why Choose Us Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-heading text-4xl font-bold mb-6 text-gray-800">
+            Why Choose Us?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TestimonialCard
-              name="Sanjay"
-              role="Client"
-              content="Excellent service! They helped set up our entire socities security system and provide great ongoing support."
-              rating={5}
-            />
-            <TestimonialCard
-              name="Amit"
-              role="Business Owner"
-              content="Helped me set up 50 pcs in our office setup! Great Service was provided."
-              rating={5}
-            />
-            <TestimonialCard
-              name="Chetan"
-              role="Business"
-              content="Spectrum Infotech has been a great partner in our tech needs, always reliable and affordable."
-              rating={4}
-            />
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+            Discover what sets us apart in delivering top-notch tech solutions.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+              <ShieldCheck className="w-12 h-12 text-primary-600 mx-auto mb-4" />
+              <h3 className="font-semibold text-xl text-gray-800 mb-2">Reliability & Expertise</h3>
+              <p className="text-gray-600">Decades of experience in technology and security solutions.</p>
+            </div>
+            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+              <ThumbsUp className="w-12 h-12 text-primary-600 mx-auto mb-4" />
+              <h3 className="font-semibold text-xl text-gray-800 mb-2">Customer-Centric Approach</h3>
+              <p className="text-gray-600">We prioritize customer satisfaction with tailored solutions.</p>
+            </div>
+            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+              <Star className="w-12 h-12 text-primary-600 mx-auto mb-4" />
+              <h3 className="font-semibold text-xl text-gray-800 mb-2">Quality Assurance</h3>
+              <p className="text-gray-600">Delivering premium products and services with utmost care.</p>
+            </div>
+            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+              <Server className="w-12 h-12 text-primary-600 mx-auto mb-4" />
+              <h3 className="font-semibold text-xl text-gray-800 mb-2">End-to-End Solutions</h3>
+              <p className="text-gray-600">From sales to repairs, security, and IT support – we do it all.</p>
+            </div>
           </div>
         </div>
       </section>
