@@ -105,19 +105,44 @@ export default function Home() {
       </section>
 
       <section className="py-24 bg-white">
-  <div className="container mx-auto px-4">
-    <div className="max-w-6xl mx-auto">
-      <h2 className="font-heading text-4xl font-bold mb-6 text-gray-800 text-center">
+  <div className="container mx-auto px-4 py-24">
+  <div className="max-w-6xl mx-auto">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* First Image */}
+      <div className="mb-6 md:mb-0">
+        <img
+          src="https://gcdnb.pbrd.co/images/IH2s2irDCc7A.jpg?o=1"
+          alt="Team at work"
+          className="rounded-2xl shadow-2xl w-full h-auto"
+        />
+      </div>
+      {/* Second Image */}
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=2000&q=80"
+          alt="Our work"
+          className="rounded-2xl shadow-2xl w-full h-auto"
+        />
+      </div>
+    </div>
+    {/* Text Content */}
+    <div className="mt-12 text-center">
+      <h2 className="font-heading text-4xl font-bold mb-6 text-gray-800">
         Our Story
       </h2>
-      <p className="text-xl text-gray-600 mb-8 text-center">
-        Founded by Mr. Shailesh Mehta, Spectrum Infotech & Securities has been at the forefront of technology solutions for over a decade. Starting with a vision to provide high-quality IT support, the company quickly expanded to offer a wide range of services, including security systems, electronics sales, and comprehensive repair services. Our commitment to quality and customer satisfaction has made us a trusted name in the industry.
+      <p className="text-xl text-gray-600 mb-8">
+        Founded by Mr. Shailesh Mehta, Spectrum Infotech & Securities has been at the forefront of technology solutions for over a
+        decade. Starting with a vision to provide high-quality IT support, the company quickly expanded to offer a wide range of services,
+        including security systems, electronics sales, and comprehensive repair services. Our commitment to quality and customer
+        satisfaction has made us a trusted name in the industry.
       </p>
-      <p className="text-xl text-gray-600 mb-8 text-center">
-        Over the years, we've built strong relationships with our clients, understanding their unique needs and delivering tailored solutions. With a focus on innovation, trust, and reliability, we have grown into a leader in our field. Our team of experts is dedicated to staying ahead of the curve with the latest technology, ensuring that our clients receive the best possible service and solutions.
+      <p className="text-xl text-gray-600 mb-8">
+        Over the years, we've built strong relationships with our clients, understanding their unique needs and delivering tailored solutions.
+        With a focus on innovation, trust, and reliability, we have grown into a leader in our field. Our team of experts is dedicated to
+        staying ahead of the curve with the latest technology, ensuring that our clients receive the best possible service and solutions.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-center">
-        <div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <div className="text-center">
           <div className="text-primary-600 mb-4">
             <ThumbsUp className="w-10 h-10 mx-auto" />
           </div>
@@ -126,7 +151,7 @@ export default function Home() {
             We have earned the trust of countless clients by consistently delivering dependable services.
           </p>
         </div>
-        <div>
+        <div className="text-center">
           <div className="text-primary-600 mb-4">
             <Tool className="w-10 h-10 mx-auto" />
           </div>
@@ -135,7 +160,7 @@ export default function Home() {
             Our solutions are built on cutting-edge technology, designed to drive efficiency and growth.
           </p>
         </div>
-        <div>
+        <div className="text-center">
           <div className="text-primary-600 mb-4">
             <ShieldCheck className="w-10 h-10 mx-auto" />
           </div>
@@ -147,6 +172,7 @@ export default function Home() {
       </div>
     </div>
   </div>
+</div>
 </section>
 
       {/* Testimonials Section */}
