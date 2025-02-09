@@ -7,6 +7,10 @@ import {
   ShieldCheck,
   ThumbsUp,
   Star,
+  Server,
+  Network,
+  FileText,
+  ShieldAlert,
 } from "lucide-react";
 
 function HeroSection() {
