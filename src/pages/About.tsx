@@ -69,7 +69,7 @@ export default function About() {
                   className="rounded-2xl shadow-2xl"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-primary-600 text-white py-4 px-8 rounded-lg">
-                  <p className="font-heading font-semibold">Founded in 2000</p>
+                  <p className="font-heading font-semibold">Founded in 2000 in Pune</p>
                 </div>
               </div>
               <div>
@@ -159,7 +159,7 @@ export default function About() {
                 <ServiceHighlight
                   icon={<Tool className="w-8 h-8" />}
                   title="Comprehensive Repairs"
-                  description="Expert repair services for computers, laptops, tablets, and mobile devices with quick turnaround times"
+                  description="Expert repair services for computers, laptops, tablets, and mobile devices with quick turnaround times in Pune"
                 />
                 <ServiceHighlight
                   icon={<Shield className="w-8 h-8" />}
