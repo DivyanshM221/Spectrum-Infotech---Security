@@ -1,102 +1,223 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import {
-  Monitor,
-  Shield,
-  PenTool as Tool,
-  ShieldCheck,
-  ThumbsUp,
-  Star,
-  Server,
-  Network,
-  FileText,
-  ShieldAlert,
-} from "lucide-react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { 
+  PenTool as Tool, 
+  Shield, 
+  Monitor, 
+  Laptop, 
+  Tablet, 
+  Camera, 
+  Wrench, 
+  Clock, 
+  CheckCircle, 
+  Server, 
+  Network, 
+  Mail, 
+  Code, 
+  ShieldCheck 
+} from 'lucide-react';
 
-function HeroSection() {
+function ServiceHero() {
   return (
-    <div className="relative min-h-[90vh] bg-primary-900 text-white overflow-hidden flex items-center justify-center">
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-900 to-primary-800 opacity-90"></div>
-        <img
-          src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=2000&q=80"
-          alt="Tech background"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="relative container mx-auto px-4 py-24 text-center">
-        <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Empowering Technology,
-            <span className="block gradient-text">Enhancing Security</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-primary-100 mb-12 animate-slide-in">
-            Your trusted partner in technology solutions and security systems
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
-            <Link
-              to="/services"
-              className="btn-gradient text-white font-semibold px-8 py-4 rounded-lg text-lg"
-            >
-              Explore Services
-            </Link>
-          </div>
-        </div>
+    <div className="bg-primary-900 text-white py-16">
+      <div className="container mx-auto px-4">
+        <h1 className="font-heading text-4xl md:text-5xl font-bold text-center mb-6">Our Services</h1>
+        <p className="text-xl text-center text-primary-100 max-w-3xl mx-auto">
+          Professional tech repair, security solutions, and device sales backed by years of expertise
+        </p>
       </div>
     </div>
   );
 }
 
-function ServiceCard({ icon, title, description }) {
+function ServiceCard({ 
+  icon, 
+  title, 
+  description, 
+  features 
+}: { 
+  icon: React.ReactNode; 
+  title: string; 
+  description: string; 
+  features: string[];
+}) {
   return (
-    <div className="service-card transform bg-white rounded-xl shadow-lg p-8 hover:scale-105 transition-all group flex flex-col items-center justify-center">
-      <div className="text-primary-600 mb-6">{icon}</div>
-      <h3 className="font-heading text-2xl font-semibold mb-4 text-gray-800 text-center">
-        {title}
-      </h3>
-      <p className="text-gray-600 mb-6 text-center">{description}</p>
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="p-6">
+        <div className="text-primary-600 mb-4">{icon}</div>
+        <h3 className="font-heading text-2xl font-semibold mb-4">{title}</h3>
+        <p className="text-gray-600 mb-6">{description}</p>
+        <ul className="space-y-3">
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-accent-green mt-1 flex-shrink-0" />
+              <span className="text-gray-700">{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
 
-function TestimonialCard({ name, role, content, rating }) {
+function ProcessStep({ number, title, description }: { number: number; title: string; description: string }) {
   return (
-    <div className="p-6 bg-white rounded-xl shadow-lg text-center">
-      <p className="text-gray-600 italic">"{content}"</p>
-      <h4 className="font-semibold text-lg text-gray-800 mt-4">{name}</h4>
-      <p className="text-primary-600">{role}</p>
-      <div className="text-yellow-500 mt-2">{"★".repeat(rating)}</div>
+    <div className="flex gap-4">
+      <div className="flex-shrink-0 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
+        {number}
+      </div>
+      <div>
+        <h4 className="font-heading text-xl font-semibold mb-2">{title}</h4>
+        <p className="text-gray-600">{description}</p>
+      </div>
     </div>
   );
 }
 
-export default function Home() {
+export default function Services() {
+  const services = [
+    {
+      icon: <Tool className="w-12 h-12" />,
+      title: "Device Repairs",
+      description: "Expert repair services for all your electronic devices with quick turnaround times.",
+      features: [
+        "Computer & laptop repairs",
+        "Tablet & iPad servicing",
+        "Hardware upgrades",
+        "Software troubleshooting",
+        "Data recovery services"
+      ]
+    },
+    {
+      icon: <Shield className="w-12 h-12" />,
+      title: "Security Solutions",
+      description: "Comprehensive security camera systems for homes and businesses.",
+      features: [
+        "CCTV installation",
+        "24/7 monitoring systems",
+        "Remote access setup",
+        "Security system maintenance",
+        "Custom security solutions"
+      ]
+    },
+    {
+      icon: <Monitor className="w-12 h-12" />,
+      title: "Electronics Sales",
+      description: "Quality new and refurbished devices at competitive prices.",
+      features: [
+        "New & refurbished laptops",
+        "Desktop computers",
+        "Tablets & iPads",
+        "Security cameras",
+        "Warranty on all products"
+      ]
+    },
+    {
+      icon: <Server className="w-12 h-12" />,
+      title: "Server Installation",
+      description: "Professional server setup and configuration for businesses of all sizes.",
+      features: [
+        "Server hardware installation",
+        "Network server setup",
+        "Cloud server configuration",
+        "Server maintenance & support",
+        "Data backup solutions"
+      ]
+    },
+    {
+      icon: <Network className="w-12 h-12" />,
+      title: "Networking & Mailing Solutions",
+      description: "Reliable networking and email solutions tailored to your business needs.",
+      features: [
+        "Network setup & configuration",
+        "Email server installation",
+        "VPN setup",
+        "Network security",
+        "Ongoing support & maintenance"
+      ]
+    },
+    {
+      icon: <Code className="w-12 h-12" />,
+      title: "Software - Microsoft & Tally",
+      description: "Installation, customization, and support for Microsoft and Tally software.",
+      features: [
+        "Microsoft Office setup",
+        "Tally ERP installation",
+        "Software customization",
+        "Data migration",
+        "Training & support"
+      ]
+    },
+    {
+      icon: <ShieldCheck className="w-12 h-12" />,
+      title: "Anti-Virus & Security Solutions",
+      description: "Comprehensive anti-virus and security software to protect your systems.",
+      features: [
+        "Anti-virus installation",
+        "Malware removal",
+        "Firewall setup",
+        "Security audits",
+        "Ongoing protection"
+      ]
+    }
+  ];
+
   return (
     <div>
-      <HeroSection />
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-4xl font-bold mb-6 text-gray-800">
-            Our Services
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive technology solutions tailored to your needs
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            <ServiceCard icon={<Tool className="w-12 h-12" />} title="Device Repairs" description="Expert repair services." />
-            <ServiceCard icon={<Shield className="w-12 h-12" />} title="Security Solutions" description="Professional security camera installations." />
-            <ServiceCard icon={<Monitor className="w-12 h-12" />} title="Electronics Sales" description="New and refurbished devices." />
+      <ServiceHero />
+      
+      {/* Main Services */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
           </div>
         </div>
       </section>
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-4xl font-bold text-gray-800 mb-16">What Our Clients Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TestimonialCard name="Sanjay" role="Client" content="Excellent service!" rating={5} />
-            <TestimonialCard name="Amit" role="Business Owner" content="Great service for office setup." rating={5} />
-            <TestimonialCard name="Chetan" role="Business" content="Reliable and affordable." rating={4} />
+
+      {/* Process Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="font-heading text-3xl font-bold text-center mb-12">Our Process</h2>
+          <div className="max-w-3xl mx-auto space-y-8">
+            <ProcessStep
+              number={1}
+              title="Initial Assessment"
+              description="We diagnose your device or evaluate your security needs through a thorough consultation."
+            />
+            <ProcessStep
+              number={2}
+              title="Custom Solution"
+              description="Our experts develop a tailored solution based on your specific requirements and budget."
+            />
+            <ProcessStep
+              number={3}
+              title="Implementation"
+              description="We carry out the repairs or installation with precision and attention to detail."
+            />
+            <ProcessStep
+              number={4}
+              title="Quality Check"
+              description="Every service undergoes rigorous testing to ensure everything works perfectly."
+            />
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-primary-900 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-heading text-3xl font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+            Contact us today for a free consultation and let us help you find the perfect solution for your needs.
+          </p>
+          <Link
+            to="/contact" 
+            className="bg-accent-orange hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg transition-all transform hover:scale-105">
+            Contact Us Now
+          </Link>
         </div>
       </section>
     </div>
