@@ -131,7 +131,7 @@ export default function Home() {
         Our Story
       </h2>
       <p className="text-xl text-gray-600 mb-8">
-        Founded by Mr. Shailesh Mehta, Spectrum Infotech & Securities has been at the forefront of technology solutions for over a
+        Founded by Mr. Shailesh Mehta, Spectrum Infotech & Securities, Pune has been at the forefront of technology solutions for over a
         decade. Starting with a vision to provide high-quality IT support, the company quickly expanded to offer a wide range of services,
         including security systems, electronics sales, and comprehensive repair services. Our commitment to quality and customer
         satisfaction has made us a trusted name in the industry.
