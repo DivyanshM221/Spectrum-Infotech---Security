@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PenTool as Tool, Shield, Monitor, Laptop, Tablet, Camera, Wrench, Clock, CheckCircle } from 'lucide-react';
+import { PenTool as Tool, Shield, Monitor, Server, Network, Code, ShieldCheck, CheckCircle } from 'lucide-react';
 
 function ServiceHero() {
   return (
@@ -15,17 +15,7 @@ function ServiceHero() {
   );
 }
 
-function ServiceCard({ 
-  icon, 
-  title, 
-  description, 
-  features 
-}: { 
-  icon: React.ReactNode; 
-  title: string; 
-  description: string; 
-  features: string[];
-}) {
+function ServiceCard({ icon, title, description, features }) {
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
       <div className="p-6">
@@ -45,65 +35,55 @@ function ServiceCard({
   );
 }
 
-function ProcessStep({ number, title, description }: { number: number; title: string; description: string }) {
-  return (
-    <div className="flex gap-4">
-      <div className="flex-shrink-0 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
-        {number}
-      </div>
-      <div>
-        <h4 className="font-heading text-xl font-semibold mb-2">{title}</h4>
-        <p className="text-gray-600">{description}</p>
-      </div>
-    </div>
-  );
-}
-
 export default function Services() {
   const services = [
     {
-      icon: <Tool className="w-12 h-12" />,
-      title: "Device Repairs",
+      icon: <Tool className="w-12 h-12" />, 
+      title: "Device Repairs", 
       description: "Expert repair services for all your electronic devices with quick turnaround times.",
-      features: [
-        "Computer & laptop repairs",
-        "Tablet & iPad servicing",
-        "Hardware upgrades",
-        "Software troubleshooting",
-        "Data recovery services"
-      ]
+      features: ["Computer & laptop repairs", "Tablet & iPad servicing", "Hardware upgrades", "Software troubleshooting", "Data recovery services"]
     },
     {
-      icon: <Shield className="w-12 h-12" />,
-      title: "Security Solutions",
+      icon: <Shield className="w-12 h-12" />, 
+      title: "Security Solutions", 
       description: "Comprehensive security camera systems for homes and businesses.",
-      features: [
-        "CCTV installation",
-        "24/7 monitoring systems",
-        "Remote access setup",
-        "Security system maintenance",
-        "Custom security solutions"
-      ]
+      features: ["CCTV installation", "24/7 monitoring systems", "Remote access setup", "Security system maintenance", "Custom security solutions"]
     },
     {
-      icon: <Monitor className="w-12 h-12" />,
-      title: "Electronics Sales",
+      icon: <Monitor className="w-12 h-12" />, 
+      title: "Electronics Sales", 
       description: "Quality new and refurbished devices at competitive prices.",
-      features: [
-        "New & refurbished laptops",
-        "Desktop computers",
-        "Tablets & iPads",
-        "Security cameras",
-        "Warranty on all products"
-      ]
+      features: ["New & refurbished laptops", "Desktop computers", "Tablets & iPads", "Security cameras", "Warranty on all products"]
+    },
+    {
+      icon: <Server className="w-12 h-12" />, 
+      title: "Server Installation", 
+      description: "Reliable server installation and maintenance services for businesses.",
+      features: ["Enterprise server setup", "Cloud server solutions", "Backup & disaster recovery", "Scalability & performance tuning", "Ongoing server support"]
+    },
+    {
+      icon: <Network className="w-12 h-12" />, 
+      title: "Networking & Mailing Solutions", 
+      description: "Seamless networking and professional email solutions for businesses.",
+      features: ["LAN & WAN setup", "Email server configuration", "Cloud email services", "Network security", "VoIP solutions"]
+    },
+    {
+      icon: <Code className="w-12 h-12" />, 
+      title: "Software - Microsoft & Tally", 
+      description: "Genuine software solutions for businesses, including Microsoft and Tally.",
+      features: ["Microsoft Office licensing", "Tally ERP solutions", "Software installation & updates", "User training & support", "Software troubleshooting"]
+    },
+    {
+      icon: <ShieldCheck className="w-12 h-12" />, 
+      title: "Antivirus & Security Solutions", 
+      description: "Protect your devices and business with industry-leading security solutions.",
+      features: ["Enterprise antivirus setup", "Firewall security", "Ransomware protection", "Regular security audits", "Secure data encryption"]
     }
   ];
 
   return (
     <div>
       <ServiceHero />
-      
-      {/* Main Services */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -113,37 +93,6 @@ export default function Services() {
           </div>
         </div>
       </section>
-
-      {/* Process Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="font-heading text-3xl font-bold text-center mb-12">Our Process</h2>
-          <div className="max-w-3xl mx-auto space-y-8">
-            <ProcessStep
-              number={1}
-              title="Initial Assessment"
-              description="We diagnose your device or evaluate your security needs through a thorough consultation."
-            />
-            <ProcessStep
-              number={2}
-              title="Custom Solution"
-              description="Our experts develop a tailored solution based on your specific requirements and budget."
-            />
-            <ProcessStep
-              number={3}
-              title="Implementation"
-              description="We carry out the repairs or installation with precision and attention to detail."
-            />
-            <ProcessStep
-              number={4}
-              title="Quality Check"
-              description="Every service undergoes rigorous testing to ensure everything works perfectly."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
       <section className="py-16 bg-primary-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-heading text-3xl font-bold mb-6">Ready to Get Started?</h2>
