@@ -6,7 +6,7 @@ function Logo() {
   return (
     <Link to="/" className="flex items-center gap-0 group">
       <img
-        src="https://gcdnb.pbrd.co/images/GxTnYyl5PLjw.png?o=1"
+        src="https://i.ibb.co/bgPCSBrp/Spectrum-5.png"
         alt="Logo"
         className="w-20 h-20 object-contain"
       />{" "}
