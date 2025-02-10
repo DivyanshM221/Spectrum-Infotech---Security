@@ -12,7 +12,7 @@ function Logo() {
       />{" "}
       {/* Adjust the size here */}
       <span className="font-heading font-bold text-xl text-blue-500">
-        Spectrum Infotech & Security
+        Spectrum Infotech & Securities
       </span>
     </Link>
   );
