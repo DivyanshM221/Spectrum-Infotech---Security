@@ -48,7 +48,7 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">
-              About Spectrum Infotech
+              About Spectrum Infotech & Security
             </h1>
             <p className="text-xl text-primary-100">
               Your trusted partner for expert technology solutions since 2000
