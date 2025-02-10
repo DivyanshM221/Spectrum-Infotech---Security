@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Facebook, Instagram, Mail } from "lucide-react";
+import { Menu, X, Facebook, Instagram, Mail, Linkedin } from "lucide-react";
 
 function Logo() {
   return (
@@ -121,6 +121,12 @@ function Footer() {
               >
                 <Instagram className="w-6 h-6" />
               </a>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/spectrum-infotech-security/"
+                className="text-primary-200 hover:text-white transition-all"
+              >
+                <Linkedin className="w-6 h-6" />
             </div>
           </div>
           <div className="text-center md:text-left">
