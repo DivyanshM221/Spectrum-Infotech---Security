@@ -29,7 +29,7 @@ function HeroSection() {
           Empowering Technology,
           <span className="block gradient-text">Enhancing Security</span>
         </h1>
-        <p className="text-xl md:text-2xl text-primary-100 mb-12 animate-slide-in">
+        <p className="text-xl md:text-2xl text-primary-100 mb-10 animate-slide-in">
           Your trusted partner in technology solutions and security systems
         </p>
         <Link
