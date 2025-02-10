@@ -121,12 +121,12 @@ function Footer() {
               >
                 <Instagram className="w-6 h-6" />
               </a>
-              </a>
               <a
                 href="https://www.linkedin.com/company/spectrum-infotech-security/"
                 className="text-primary-200 hover:text-white transition-all"
               >
                 <Linkedin className="w-6 h-6" />
+              </a>
             </div>
           </div>
           <div className="text-center md:text-left">
