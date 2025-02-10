@@ -8,7 +8,7 @@ function Logo() {
       <img
         src="https://i.ibb.co/G4P180vn/Spectrum-6.png"
         alt="Logo"
-        className="w-20 h-20 object-contain"
+        className="w-16 h-16 object-contain"
       />{" "}
       {/* Adjust the size here */}
       <span className="font-heading font-bold text-xl text-blue-500">
