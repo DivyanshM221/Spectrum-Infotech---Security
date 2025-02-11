@@ -102,7 +102,7 @@ export default function About() {
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary-600">
-                      2000+
+                      7000+
                     </div>
                     <div className="text-gray-600">Happy Clients</div>
                   </div>
