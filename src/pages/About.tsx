@@ -83,8 +83,8 @@ export default function About() {
                   A visionary entrepreneur with a passion for technology, Mr.
                   Shailesh Mehta has built Spectrum Infotech & Securities on the
                   pillars of innovation, trust, and excellence. His leadership
-                  has transformed the company into a trusted name in electronics
-                  repairs and security systems.
+                  has transformed the company into a trusted name in Computers
+                  sales , services and security systems.
                 </p>
                 <p className="text-gray-600 mb-6">
                   With over 25 years of experience in the technology sector, Mr.
