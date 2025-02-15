@@ -53,7 +53,7 @@ export default function Services() {
       icon: <Monitor className="w-12 h-12" />, 
       title: "Electronics Sales", 
       description: "Quality new and refurbished devices at competitive prices.",
-      features: ["New & refurbished laptops", "Desktop computers", "Tablets & iPads", "Security cameras", "Warranty on all products"]
+      features: ["New & refurbished laptops", "Desktop computers", "Tablets & iPads", "Security cameras", "Printers & Peripherals"]
     },
     {
       icon: <Server className="w-12 h-12" />, 
