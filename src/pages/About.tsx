@@ -64,7 +64,7 @@ export default function About() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative">
                 <img
-                  src="https://i.ibb.co/JRNPSH6f/Whats-App-Image-2025-01-26-at-16-56-35-a50ffa61.jpg"
+                  src="https://i.ibb.co/nNzY2Jpp/Whats-App-Image-2025-02-13-at-15-03-47-979eaaaa.jpg"
                   alt="Mr. Shailesh Mehta"
                   className="rounded-2xl shadow-2xl"
                 />
